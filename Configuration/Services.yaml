@@ -14,3 +14,9 @@ services:
   HauerHeinrich\HhReadableAnchor\ViewHelpers\AnchorViewHelper:
     public: true
     shared: false
+
+  HauerHeinrich\HhReadableAnchor\EventListener\AddAnchorFieldToAllContentTypes:
+    tags:
+      - name: event.listener
+        identifier: 'hh-readable-anchor/add-field-to-all-content-types'
+        event: TYPO3\CMS\Core\Configuration\Event\AfterTcaCompilationEvent

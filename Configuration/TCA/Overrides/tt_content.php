@@ -22,7 +22,9 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
         ],
     ]);
 
-    // Für ALLE CTypes, direkt hinter der Überschriften-Palette
+    // Für alle bis hierhin bekannten CTypes, direkt hinter der Überschriften-Palette.
+    // CTypes von später geladenen Extensions (z. B. news_pi1) ergänzt der Listener
+    // Classes/EventListener/AddAnchorFieldToAllContentTypes.php
     ExtensionManagementUtility::addToAllTCAtypes(
         'tt_content',
         'tx_hhreadableanchor_anchor',

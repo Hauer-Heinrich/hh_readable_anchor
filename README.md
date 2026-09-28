@@ -39,6 +39,18 @@ Extension Manager and run "Analyze Database Structure".
 - TYPO3 13: Add the site set `hauerheinrich/hh-readable-anchor` in the site configuration
   (or use the static template as well).
 
+## Third-party content elements (e.g. EXT:news)
+
+The field is added to **every** CType, including plugins of other extensions such as
+`news_pi1` – regardless of the extension loading order. A PSR-14 listener on
+`AfterTcaCompilationEvent` adds it once all TCA overrides have been processed.
+After installing further extensions, flush the caches (`vendor/bin/typo3 cache:flush`).
+
+Note: The field only appears in the backend form. Whether the ID is output in the
+frontend depends on the template of the respective extension – if it uses the
+`Default` layout of `lib.contentElement`, this happens automatically; otherwise use
+the `ra:anchor` ViewHelper there.
+
 ## Custom layouts / site package
 
 The bundled layout only overrides the core layout of fluid_styled_content
