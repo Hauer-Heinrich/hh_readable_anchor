@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="EXT:hh_readable_anchor/Resources/Private/Language/locallang_db.xlf" date="2026-09-28T00:00:00Z" product-name="hh_readable_anchor">
+        <header/>
+        <body>
+            <trans-unit id="tt_content.tx_hhreadableanchor_anchor" resname="tt_content.tx_hhreadableanchor_anchor">
+                <source>Anchor (jump mark)</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_hhreadableanchor_anchor.description" resname="tt_content.tx_hhreadableanchor_anchor.description">
+                <source>Used as the HTML ID of this content element (e.g. #contact). Leave empty to generate it from the header. Without a header, the TYPO3 default #c[UID] is used.</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_hhreadableanchor_anchor.placeholder" resname="tt_content.tx_hhreadableanchor_anchor.placeholder">
+                <source>generated automatically from the header</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

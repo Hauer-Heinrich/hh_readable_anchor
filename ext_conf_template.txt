@@ -1,0 +1,8 @@
+# cat=basic; type=string; label=Präfix: Optionales Präfix für alle lesbaren Sprungmarken (z. B. "sec-"). Leer = kein Präfix.
+prefix =
+
+# cat=basic; type=string; label=Reservierte IDs: Kommagetrennte Liste von IDs, die das Seitentemplate bereits verwendet. Kollidiert eine Sprungmarke damit, wird eine Zahl angehängt (z. B. navigation-2).
+reservedIds = top,main,content,header,footer,navigation,nav,menu,page
+
+# cat=basic; type=int+; label=Maximale Länge: Maximale Zeichenanzahl einer generierten Sprungmarke (0 = unbegrenzt).
+maxLength = 80

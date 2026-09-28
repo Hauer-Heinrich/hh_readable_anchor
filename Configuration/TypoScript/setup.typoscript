@@ -1,0 +1,8 @@
+# Überschreibt nur das Core-Layout von fluid_styled_content (Index 0).
+# Bewusst niedriger Index (5): Ein eigenes Sitepackage-Layout (10, 20, ...)
+# hat weiterhin Vorrang – dort einfach den ViewHelper ra:anchor einsetzen.
+# lib.contentElement {
+#     layoutRootPaths {
+#         5 = EXT:hh_readable_anchor/Resources/Private/Layouts/
+#     }
+# }

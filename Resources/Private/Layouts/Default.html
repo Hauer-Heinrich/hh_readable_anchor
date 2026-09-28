@@ -1,0 +1,58 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:ra="http://typo3.org/ns/HauerHeinrich/HhReadableAnchor/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:comment>
+    Basiert auf EXT:fluid_styled_content/Resources/Private/Layouts/Default.html (v12/v13).
+    Änderung: Die ID kommt aus ra:anchor. Der alte Anker "c{uid}" bleibt zusätzlich
+    erhalten, damit bestehende Links (#c123, z. B. aus dem RTE) weiter funktionieren.
+</f:comment>
+<f:variable name="anchor" value="{ra:anchor(data: data)}" />
+<f:variable name="legacyAnchor" value="c{data.uid}" />
+<f:if condition="{data.frame_class} != none">
+    <f:then>
+        <div id="{anchor}" class="frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}">
+            <f:if condition="{anchor} != {legacyAnchor}">
+                <span id="{legacyAnchor}"></span>
+            </f:if>
+            <f:if condition="{data._LOCALIZED_UID}">
+                <span id="c{data._LOCALIZED_UID}"></span>
+            </f:if>
+            <f:render section="Before" optional="true">
+                <f:render partial="DropIn/Before/All" arguments="{_all}" />
+            </f:render>
+            <f:render section="Header" optional="true">
+                <f:render partial="Header/All" arguments="{_all}" />
+            </f:render>
+            <f:render section="Main" optional="true" />
+            <f:render section="Footer" optional="true">
+                <f:render partial="Footer/All" arguments="{_all}" />
+            </f:render>
+            <f:render section="After" optional="true">
+                <f:render partial="DropIn/After/All" arguments="{_all}" />
+            </f:render>
+        </div>
+    </f:then>
+    <f:else>
+        <span id="{anchor}"></span>
+        <f:if condition="{anchor} != {legacyAnchor}">
+            <span id="{legacyAnchor}"></span>
+        </f:if>
+        <f:if condition="{data._LOCALIZED_UID}">
+            <a id="c{data._LOCALIZED_UID}"></a>
+        </f:if>
+        <f:render section="Before" optional="true">
+            <f:render partial="DropIn/Before/All" arguments="{_all}" />
+        </f:render>
+        <f:render section="Header" optional="true">
+            <f:render partial="Header/All" arguments="{_all}" />
+        </f:render>
+        <f:render section="Main" optional="true" />
+        <f:render section="Footer" optional="true">
+            <f:render partial="Footer/All" arguments="{_all}" />
+        </f:render>
+        <f:render section="After" optional="true">
+            <f:render partial="DropIn/After/All" arguments="{_all}" />
+        </f:render>
+    </f:else>
+</f:if>
+</html>

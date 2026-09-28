@@ -1,0 +1,16 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  HauerHeinrich\HhReadableAnchor\:
+    resource: '../Classes/*'
+
+  # Shared (eine Instanz pro Request) -> Eindeutigkeit der Anker im Dokument
+  HauerHeinrich\HhReadableAnchor\Service\AnchorResolver:
+    public: true
+
+  HauerHeinrich\HhReadableAnchor\ViewHelpers\AnchorViewHelper:
+    public: true
+    shared: false
